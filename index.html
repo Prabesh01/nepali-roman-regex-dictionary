@@ -92,12 +92,22 @@
         
         // --- Dynamic Examples Configuration ---
         const examplesDict = {
-            'v4=^ni': "Words starting with 'ni'",
+            'v4=^kri': "Words starting with 'kri'",
             'v3=man$': "Words ending with 'man'",
-            'v4=^.{5}$': "Exactly 5 letters",
-            'v0=^त.+त$': "Words that start and end with त",
-            'v0=(.)\\1': "Double letters",
-            'v0=^ज्ञ': "Words starting with 'ज्ञ'"
+            'v4=net': "Words containing 'net'",
+            'v4=^bir..$': "5 letter words starting with 'bir'",
+            'v4=^..tel$': "5 letter words ending with 'tel'",
+            "v3=^(.)(.)\\2\\1$":"4 letter Palindromes",
+            "v3=^[b-df-hj-np-tv-z][aeiou][b-df-hj-np-tv-z][aeiou]$": "4 letter domain name ideas",
+            "v4=^([b-df-hj-np-tv-z][aeiou]){3}$": "6 letter domain name ideas",
+            'v0=^त.+त$': "Words that start and end with 'त'",
+            'v0=(.)\\1\\1': "Triple letters",
+            'v0=^.{22}$': "22 character long words",
+            'v0=^ज्ञ': "Words starting with 'ज्ञ'",
+            'v0=[अआइईउऊऋएऐओऔअंअ:][अआइईउऊऋएऐओऔअंअ:][अआइईउऊऋएऐओऔअंअ:]': "Words with 3 vowels in a row",
+            // 'v0=^[^अआइईउऊऋएऐओऔअंअ:]+$': "Words having no vowels",
+            'v0=^(.+)\\1$': 'onomatopoeic/echo words',
+            'v0=कूल|कुल$': "'कुल' शब्दहरु"
         };
         const defaultHeading = "Nepali Roman RegEx Dictionary";
         const defaultSubHeading = '<a href="https://www.regexdictionary.com/" target="_blank">English RegEx Dictionary</a> | <a href="https://sabdasakha.com/" target="_blank">Nepali Dictionary</a>'
