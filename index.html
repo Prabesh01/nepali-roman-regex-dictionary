@@ -46,8 +46,8 @@
 
     <h1 style="cursor:pointer" onclick="window.location='/'">Nepali Roman RegEx Dictionary</h1>
     <div id="subheader" style="margin-bottom: 1.5rem;">
-        <a href="https://www.regexdictionary.com/" target="_blank">English RegEx Dictionary</a> |
-        <a href="https://sabdasakha.com/" target="_blank">Nepali Dictionary</a>
+        <a href="http://www.regexdictionary.com/" target="_blank">English RegEx Dictionary</a> |
+        <a href="https://npdictionary.prax.to/" target="_blank">Nepali Dictionary</a>
     </div>
 
     <div class="input-wrapper">
@@ -110,7 +110,7 @@
             'v0=कूल|कुल$': "'कुल' शब्दहरु"
         };
         const defaultHeading = "Nepali Roman RegEx Dictionary";
-        const defaultSubHeading = '<a href="https://www.regexdictionary.com/" target="_blank">English RegEx Dictionary</a> | <a href="https://sabdasakha.com/" target="_blank">Nepali Dictionary</a>'
+        const defaultSubHeading = '<a href="http://www.regexdictionary.com/" target="_blank">English RegEx Dictionary</a> | <a href="https://npdictionary.prax.to/" target="_blank">Nepali Dictionary</a>'
         const mainHeading = document.querySelector('h1');
         const subHeading = document.getElementById('subheader');
         
@@ -239,13 +239,13 @@
                 });
 
                 // Convert map to array for rendering
-                const uniqueMatches = Array.from(uniqueMatchesMap, ([displayText, sabdasakhaWord]) => ({ displayText, sabdasakhaWord }));
+                const uniqueMatches = Array.from(uniqueMatchesMap, ([displayText, nepaliWord]) => ({ displayText, nepaliWord }));
 
                 const displayLimit = 1000;
                 let resultsHTML = uniqueMatches
                     .slice(0, displayLimit)
                     .map(match => {
-                        const dictUrl = `https://sabdasakha.com/?q=${encodeURIComponent(match.sabdasakhaWord)}`;
+                        const dictUrl = `https://npdictionary.prax.to/word/${encodeURIComponent(match.nepaliWord)}`;
                         return `<li><a href="${dictUrl}" target="_blank" rel="noopener noreferrer">${match.displayText}</a></li>`;
                     })
                     .join('');
